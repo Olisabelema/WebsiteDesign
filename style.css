@@ -26,8 +26,9 @@ header {
     top: 0; /* Start at the top of the viewport */
     width: 100px; /* Set the container's width to 100px */
     height: 100vh; /* Make the container span the full height */
-    background-color: #000000; /* Set background color to black */
+    background-color: #2c2727; /* Set background color to black */
     border-radius: 0; /* Remove rounded corners */
+    
     box-shadow: none; /* Remove shadow for a clean, flat look */
     display: flex; /* Use flexbox for centering content */
     flex-direction: column; /* Arrange icons vertically */
