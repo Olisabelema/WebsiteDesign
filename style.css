@@ -6,7 +6,7 @@
 }
 
 body {
-    background: rgb(228, 220, 220); /* Light grey background */
+    background: rgb(223, 219, 219); /* Light grey background */
     height: 100vh;
     font-family: Arial, sans-serif; 
     display: flex;
@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    border: 10px solid rgb(146, 146, 168);
+    border: 10px solid rgb(153, 153, 172);
     height: 100vh;
     display: flex;
 }
