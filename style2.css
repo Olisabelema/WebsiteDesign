@@ -1,0 +1,90 @@
+
+
+.background-image {
+    width: 20%; /* Make the image take up 50% of the width */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position it absolutely within the content div */
+    left: 0;
+    top: 0;
+    /*z-index: 1; /* Place it behind the overlay */
+} 
+
+/* The overlay that contains the text box */
+.overlay {
+    position: relative;
+   /* z-index: 2; /* Ensure it appears on top of the image */
+    width: 50%; /* Limit the width of the overlay */
+    height: 100%; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    text-align: center; /* Center the text inside the overlay */
+}
+
+/* Style the text box */
+
+.text-box {
+    color: rgb(19, 17, 17);
+    padding: 20px;
+    background-color: rgba(252, 252, 252, 0.966); /* Solid background for the text box */
+    border-radius: 10px;
+    position: fixed;
+    text-align: center;
+    }
+
+/* Style for each line */
+.text-box p {
+    margin-bottom: 15px; /* Add space between the paragraphs */
+}
+
+/* Specific styles for each line */
+.text-box p.line1 {
+    font-size: 24px; /* Largest font size for Line 1 */
+    font-weight: bold; /* Make it bold for emphasis */
+}
+
+.text-box p.line2 {
+    font-size: 20px; /* Slightly smaller font size for Line 2 */
+    font-weight: bold; /* Make it bold for emphasis */
+}
+
+.text-box p.line3 {
+    font-size: 16px; /* Smaller font size for Line 3 */
+}
+
+/* Style the buttons within the text box */
+.text-box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px; /* Space between buttons */
+    background-color: rgba(255, 255, 255, 0.959); /* Light background */
+    color: rgb(20, 19, 19);
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+    text-align: center;
+    min-width: 100px; /* Ensure buttons have a minimum width */
+}
+
+.text-box .btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+} 
+
+
+
+<div class="content">
+<img src="icon/Male.png" alt="Male Image icon" class="background-image">
+<div class="overlay">
+    <div class="text-box">
+        <p>NAME HERE</p>
+        <p>DESIGNER</p>
+        <p> 
+            <a href="path/to/your/resume.pdf" class="btn">Resume</a>
+            <a href="path/to/contact/page" class="btn">Contact</a>
+        </p>
+    </div>
+</div>
+</div>
