@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: rgb(228, 220, 220); /* Light grey background */
+    height: 100vh;
+    font-family: Arial, sans-serif; 
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Center content vertically */
+}
+
+header {
+    border: 10px solid rgb(146, 146, 168);
+    height: 100vh;
+    display: flex;
+}
+
+.icon {
+    position: fixed; /* Keep the icons fixed to the left */
+    left: 0; /* Align the icons to the far left */
+    top: 0; /* Start at the top of the viewport */
+    width: 100px; /* Set the container's width to 100px */
+    height: 100vh; /* Make the container span the full height */
+    background-color: #000000; /* Set background color to black */
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: none; /* Remove shadow for a clean, flat look */
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Arrange icons vertically */
+    justify-content: space-between; /* Distribute space between icons */
+    align-items: center; /* Center icons horizontally within the strip */
+}
+
+.icon ul {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; 
+    flex-direction: column; /* Arrange icons vertically */
+    align-items: center; /* Center the icons within the container */
+    gap: 20px; /* Space between icons */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure ul takes full width of .icon container */
+}
+
+.icon li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon li:last-child {
+    margin-top: auto; /* Pushes the last icon to the bottom */
+}
+
+.icon img {
+    width: 50px; /* Set a consistent size for the icons */
+    height: 50px;
+    background-color: transparent; /* Ensure the image background is transparent */
+    transition: transform 0.2s ease-in-out; /* Smooth scaling effect on hover */
+}
+
+.icon img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
