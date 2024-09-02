@@ -4,7 +4,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
+1
 body {
     background: rgb(223, 219, 219); /* Light grey background */
     height: 100vh;
@@ -44,7 +44,7 @@ header {
     gap: 20px; /* Space between icons */
     padding: 0;
     margin: 0;
-    width: 100%; /* Ensure ul takes full width of .icon container */
+   
 }
 
 .icon li {
