@@ -8,7 +8,7 @@
 body {
     background: rgb(223, 219, 219); /* Light grey background */
     height: 100vh;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: flex-start; /* Align content to the left */
     align-items: center; /* Center content vertically */
@@ -36,7 +36,7 @@ header {
 
 .icon ul {
     list-style-type: none; /* Remove bullet points */
-    display: flex; 
+    display: flex;
     flex-direction: column; /* Arrange icons vertically */
     align-items: center; /* Center the icons within the container */
     gap: 20px; /* Space between icons */
@@ -52,7 +52,6 @@ header {
     justify-content: center;
 }
 
-
 .icon img {
     width: 50px; /* Set a consistent size for the icons */
     height: 50px;
@@ -62,4 +61,84 @@ header {
 
 .icon img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* New content styling */
+.content {
+    display: flex;
+    justify-content: flex-start; /* Align content to the start */
+    align-items: center; /* Center content vertically */
+    margin-left: 150px; /* Add some space to the right of the icon strip */
+    width: calc(100% - 120px); /* Adjust width to fit the rest of the screen */
+    height: 100vh;
+    position: relative; /* Position relative to allow absolute positioning of children */
+    background: rgb(223, 219, 219); /* Light grey background */
+    padding: 20px; /* Optional padding around the content */
+    
+}
+
+/* The actual image with drop shadow */
+.background-image {
+    width: 20%; /* Adjust the width of the image to fit the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is displayed as a block element */
+    border-radius: 10px; /* Optional rounded corners to match container */
+    position: relative;
+    z-index: 2; /* Ensure it sits above the black layer */
+    box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 1); /* Drop shadow with x and y offsets and 100% opacity */
+}
+
+.text-box {
+    color: rgb(19, 17, 17);
+    padding: 20px;
+    background: transparent; /* Transparent background to match the parent */
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 200px;
+}
+
+/* Style for each line */
+.text-box p {
+    margin-bottom: 20px; /* Add space between the paragraphs */
+}
+
+/* Specific styles for each line */
+.text-box p.line1 {
+    font-size: 32px; /* Largest font size for Line 1 */
+    font-weight: bolder; /* Make it bold for emphasis */
+    color: rgb(30, 30, 30); /* Darker grey color for more contrast */
+    margin-bottom: 30px; /* 20px space between Line 1 and Line 2 */
+}
+
+.text-box p.line2 {
+    font-size: 24px; /* Slightly smaller font size for Line 2 */
+    font-weight: lighter;
+    color: rgb(150, 150, 150); /* Light grey color for lighter text */
+    margin-bottom: 15px; /* 10px space between Line 2 and buttons */
+}
+
+
+.text-box p.line3 {
+    font-size: 16px; /* Smaller font size for Line 3 */
+}
+
+/* Style the buttons within the text box */
+.text-box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px; /* Space between buttons */
+    background: rgb(223, 219, 219); /* Match background with parent */
+    color: rgb(20, 19, 19);
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    border-radius: 5px; /* Rounded corners for buttons */
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1); /* Apply the same drop shadow as the background image */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+    text-align: center;
+    min-width: 100px; /* Ensure buttons have a minimum width */
+}
+
+.text-box .btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
