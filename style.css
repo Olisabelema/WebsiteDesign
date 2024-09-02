@@ -4,7 +4,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-1
+
 body {
     background: rgb(223, 219, 219); /* Light grey background */
     height: 100vh;
@@ -28,11 +28,9 @@ header {
     height: 100vh; /* Make the container span the full height */
     background-color: #2c2727; /* Set background color to black */
     border-radius: 0; /* Remove rounded corners */
-    
     box-shadow: none; /* Remove shadow for a clean, flat look */
     display: flex; /* Use flexbox for centering content */
     flex-direction: column; /* Arrange icons vertically */
-    justify-content: space-between; /* Distribute space between icons */
     align-items: center; /* Center icons horizontally within the strip */
 }
 
@@ -44,7 +42,8 @@ header {
     gap: 20px; /* Space between icons */
     padding: 0;
     margin: 0;
-   
+    flex-grow: 1; /* Make the list take up available vertical space */
+    justify-content: center; /* Center the icons in the middle of the container */
 }
 
 .icon li {
@@ -53,9 +52,6 @@ header {
     justify-content: center;
 }
 
-.icon li:last-child {
-    margin-top: auto; /* Pushes the last icon to the bottom */
-}
 
 .icon img {
     width: 50px; /* Set a consistent size for the icons */
@@ -67,4 +63,3 @@ header {
 .icon img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
-
