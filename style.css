@@ -53,8 +53,8 @@ header {
 }
 
 .icon img {
-    width: 50px; /* Set a consistent size for the icons */
-    height: 50px;
+    width: 40px; /* Set a consistent size for the icons */
+    height: 40px;
     background-color: transparent; /* Ensure the image background is transparent */
     transition: transform 0.2s ease-in-out; /* Smooth scaling effect on hover */
 }
@@ -107,7 +107,7 @@ header {
     font-size: 32px; /* Largest font size for Line 1 */
     font-weight: bolder; /* Make it bold for emphasis */
     color: rgb(30, 30, 30); /* Darker grey color for more contrast */
-    margin-bottom: 30px; /* 20px space between Line 1 and Line 2 */
+    margin-bottom: 30px; /* 30px space between Line 1 and Line 2 */
 }
 
 .text-box p.line2 {
