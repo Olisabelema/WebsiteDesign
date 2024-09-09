@@ -6,7 +6,7 @@
 }
 
 body {
-    background: rgb(223, 219, 219); /* Light grey background */
+    background: rgb(233, 232, 232); /* Light grey background */
     height: 100vh;
     font-family: Arial, sans-serif;
     display: flex;
@@ -44,6 +44,7 @@ header {
     margin: 0;
     flex-grow: 1; /* Make the list take up available vertical space */
     justify-content: center; /* Center the icons in the middle of the container */
+    
 }
 
 .icon li {
@@ -63,6 +64,24 @@ header {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
 
+* Styling for the icon2 class */
+.icon2 {
+    margin-bottom: 20px; /* Add space at the bottom */
+}
+
+.icon2 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon2 img {
+    width: 40px; /* Set consistent icon size */
+    height: 40px;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out; /* Smooth scaling effect on hover */
+}
+
 /* New content styling */
 .content {
     display: flex;
@@ -72,7 +91,7 @@ header {
     width: calc(100% - 120px); /* Adjust width to fit the rest of the screen */
     height: 100vh;
     position: relative; /* Position relative to allow absolute positioning of children */
-    background: rgb(223, 219, 219); /* Light grey background */
+    background: rgb(233, 232, 232); /* Light grey background */
     padding: 20px; /* Optional padding around the content */
     
 }
@@ -98,7 +117,7 @@ header {
 }
 
 /* Style for each line */
-.text-box p {
+.text-box h1, h2, h3 {
     margin-bottom: 20px; /* Add space between the paragraphs */
 }
 
@@ -127,11 +146,11 @@ header {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px; /* Space between buttons */
-    background: rgb(223, 219, 219); /* Match background with parent */
+    background-color: rgba(255, 255, 255, 0.986); /* Slightly darker background on hover */
     color: rgb(20, 19, 19);
     text-decoration: none; /* Remove underline */
     font-size: 18px; /* Set font size */
-    border-radius: 5px; /* Rounded corners for buttons */
+    border-radius: 0px; /* Rounded corners for buttons */
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1); /* Apply the same drop shadow as the background image */
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
     text-align: center;
@@ -139,6 +158,6 @@ header {
 }
 
 .text-box .button:hover {
-    background-color: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
+    background-color: rgba(255, 255, 255, 0.986); /* Slightly darker background on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
