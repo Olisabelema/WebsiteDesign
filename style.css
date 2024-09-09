@@ -103,14 +103,14 @@ header {
 }
 
 /* Specific styles for each line */
-.text-box p.line1 {
+.text-box h1 {
     font-size: 32px; /* Largest font size for Line 1 */
     font-weight: bolder; /* Make it bold for emphasis */
     color: rgb(30, 30, 30); /* Darker grey color for more contrast */
     margin-bottom: 30px; /* 30px space between Line 1 and Line 2 */
 }
 
-.text-box p.line2 {
+.text-box h2 {
     font-size: 24px; /* Slightly smaller font size for Line 2 */
     font-weight: lighter;
     color: rgb(150, 150, 150); /* Light grey color for lighter text */
@@ -118,12 +118,12 @@ header {
 }
 
 
-.text-box p.line3 {
+.text-box h3 {
     font-size: 16px; /* Smaller font size for Line 3 */
 }
 
 /* Style the buttons within the text box */
-.text-box .btn {
+.text-box .button {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px; /* Space between buttons */
@@ -138,7 +138,7 @@ header {
     min-width: 100px; /* Ensure buttons have a minimum width */
 }
 
-.text-box .btn:hover {
+.text-box .button:hover {
     background-color: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
