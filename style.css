@@ -1,3 +1,4 @@
+/* Global styling */
 * {
     padding: 0;
     margin: 0;
@@ -6,114 +7,159 @@
 }
 
 body {
-    background: rgb(233, 232, 232); /* Light grey background */
-    height: 100vh;
+    background: rgb(112, 112, 112); /* Light grey background */
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: flex-start; /* Align content to the left */
-    align-items: center; /* Center content vertically */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable scroll snapping for vertical sections */
+    display: block; /* Change display to block to allow vertical stacking */
 }
 
-header {
-    border: 10px solid rgb(153, 153, 172);
-    height: 100vh;
+/* Section styling */
+section {
+    height: 100vh; /* Each section takes the full height of the viewport */
+    padding: 50px 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    scroll-snap-align: start; /* Snap sections to start when scrolling */
+    background-color: rgba(0, 0, 0, 0.7); /* Default background color */
+    color: rgb(17, 17, 17); /* Default text color */
 }
 
+/* Section-specific background colors */
+#home { background-color: rgba(0, 0, 0, 0.7); }
+#about { background-color: rgba(0, 0, 0, 0.7); }
+#projects { background-color: rgba(0, 0, 0, 0.7); }
+#qualifications { background-color: rgba(0, 0, 0, 0.7); }
+#contact { background-color: rgba(0, 0, 0, 0.7); }
+
+/* Navigation styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(37, 37, 37, 0.7);
+    z-index: 1000;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(37, 37, 37, 0.7);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Icon strip styling */
 .icon {
     position: fixed; /* Keep the icons fixed to the left */
-    left: 0; /* Align the icons to the far left */
-    top: 0; /* Start at the top of the viewport */
-    width: 100px; /* Set the container's width to 100px */
-    height: 100vh; /* Make the container span the full height */
-    background-color: #2c2727; /* Set background color to black */
-    border-radius: 0; /* Remove rounded corners */
-    box-shadow: none; /* Remove shadow for a clean, flat look */
-    display: flex; /* Use flexbox for centering content */
-    flex-direction: column; /* Arrange icons vertically */
-    align-items: center; /* Center icons horizontally within the strip */
-}
-
-.icon ul {
-    list-style-type: none; /* Remove bullet points */
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: #050505; /* Set background color to black */
     display: flex;
-    flex-direction: column; /* Arrange icons vertically */
-    align-items: center; /* Center the icons within the container */
-    gap: 20px; /* Space between icons */
-    padding: 0;
-    margin: 0;
-    flex-grow: 1; /* Make the list take up available vertical space */
-    justify-content: center; /* Center the icons in the middle of the container */
-    
-}
-
-.icon li {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    z-index: 1000;
+    justify-content: center; /* Center icons vertically */
 }
 
+/* Main icons styling */
+.icon ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 10px spacing between icons */
+    flex-grow: 1; /* Make the icon list grow to center the icons vertically */
+    justify-content: center; /* Ensure icons are vertically centered */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove padding */
+}
+
+/* Share icon positioning at the bottom */
+.icon2 {
+    margin-bottom: 20px; /* Add space at the bottom for the share icon */
+}
+
+/* Icon styling */
 .icon img {
-    width: 40px; /* Set a consistent size for the icons */
+    width: 40px;
     height: 40px;
-    background-color: transparent; /* Ensure the image background is transparent */
-    transition: transform 0.2s ease-in-out; /* Smooth scaling effect on hover */
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon3 img {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out;
+    margin-left: 150px;
+}
+
+.icon4 img {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out;
+    margin-right: 100px;
 }
 
 .icon img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
 
-* Styling for the icon2 class */
-.icon2 {
-    margin-bottom: 20px; /* Add space at the bottom */
-}
 
-.icon2 ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.icon2 img {
-    width: 40px; /* Set consistent icon size */
-    height: 40px;
-    background-color: transparent;
-    transition: transform 0.2s ease-in-out; /* Smooth scaling effect on hover */
-}
-
-/* New content styling */
+/* Content area styling */
 .content {
     display: flex;
-    justify-content: flex-start; /* Align content to the start */
-    align-items: center; /* Center content vertically */
-    margin-left: 150px; /* Add some space to the right of the icon strip */
-    width: calc(100% - 120px); /* Adjust width to fit the rest of the screen */
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 120px); /* Adjust width to account for icon strip */
     height: 100vh;
-    position: relative; /* Position relative to allow absolute positioning of children */
     background: rgb(233, 232, 232); /* Light grey background */
-    padding: 20px; /* Optional padding around the content */
-    
+    padding: 20px;
 }
 
-/* The actual image with drop shadow */
-.background-image {
-    width: 20%; /* Adjust the width of the image to fit the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure the image is displayed as a block element */
-    border-radius: 10px; /* Optional rounded corners to match container */
-    position: relative;
-    z-index: 2; /* Ensure it sits above the black layer */
-    box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 1); /* Drop shadow with x and y offsets and 100% opacity */
-}
-
+/* Specific text-box styling */
 .text-box {
     color: rgb(19, 17, 17);
     padding: 20px;
-    background: transparent; /* Transparent background to match the parent */
-    border-radius: 10px;
+    background: transparent;
     text-align: center;
     margin-left: 200px;
+}
+
+.text-box h1 {
+    margin-bottom: 32px;
+}
+
+.text-box h2 {
+    margin-bottom: 24px;
+}
+
+.text-box h3 {
+    margin-bottom: 16px;
 }
 
 /* Style for each line */
@@ -141,23 +187,146 @@ header {
     font-size: 16px; /* Smaller font size for Line 3 */
 }
 
-/* Style the buttons within the text box */
 .text-box .button {
     display: inline-block;
     padding: 10px 20px;
-    margin: 5px; /* Space between buttons */
-    background-color: rgba(255, 255, 255, 0.986); /* Slightly darker background on hover */
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.986);
     color: rgb(20, 19, 19);
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Set font size */
-    border-radius: 0px; /* Rounded corners for buttons */
-    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1); /* Apply the same drop shadow as the background image */
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 0px;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
     text-align: center;
-    min-width: 100px; /* Ensure buttons have a minimum width */
+    min-width: 100px;
 }
 
 .text-box .button:hover {
-    background-color: rgba(255, 255, 255, 0.986); /* Slightly darker background on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background-color: rgba(255, 255, 255, 0.986);
+    transform: scale(1.05);
 }
+
+/* Background image styling */
+.background-image {
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Styling for icon2 */
+.icon2 {
+    margin-bottom: 10px;
+}
+
+/* Ensure the header stays on top of the content */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000; /* Ensure the header is always on top */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Section-specific styling */
+#about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100%;
+}
+
+/* Fixing the z-index for content */
+#about .content {
+    background: rgb(233, 232, 232); /* Light grey background */
+    padding: 20px;
+    
+    border-radius: 0px;
+    width: 90%;
+    text-align: center;
+    z-index: 1; /* Ensures content stays above background elements */
+}
+
+/* Positioning icon3 and icon4 */
+.icon3 {
+    position: absolute;
+    top: 50px; /* Position icons at the top */
+    z-index: 2; /* Keep them behind the content */
+    left: 5px;  /* icon3 at the start (left) of the section */
+}
+.icon4 {
+    position: absolute;
+    bottom: 50px; /* Position icons at the bottom */
+    z-index: 2; /* Keep them behind the content */
+    right: 20px;  /* icon3 at the bottom (right) of the section */
+}
+
+/* Icon styling */
+.icon img {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out;
+    opacity: 0.7; /* Slight transparency for visibility */
+}
+
+/* Ensure icons scale on hover */
+.icon img:hover {
+    transform: scale(1.1) /* Slightly enlarge the icon on hover */
+}
+
+
+/* Style for the container with two-sided rounded corners */
+.rectangular-frame {
+    width: 100%; /* Adjust width as needed */
+    max-width: 900px; /* Maximum width for the frame */
+    background-color: white; /* Background color of the frame */
+    padding: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.7); /* Border around the frame */
+    border-top-right-radius: 30px; /* Top-left rounded corner */
+    border-bottom-left-radius: 30px; /* Bottom-right rounded corner */
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1); /* Shadow for depth */
+    text-align: center;
+}
+
+/* Style for the <h1> element inside the frame */
+.rectangular-frame h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space between <h1> and <textarea> */
+    color: #000; /* Text color */
+}
+
+/* Style for the textarea inside the frame */
+.rectangular-frame textarea {
+    width:80%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Border around the textarea */
+    resize: none; /* Disable resizing */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #050505; /* Text color inside the textarea */
+}
+
+
+/* Ensuring sections maintain uniform layout */
+section {
+    height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    color: rgb(26, 25, 25);
+}
+
+
