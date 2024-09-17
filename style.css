@@ -1,4 +1,3 @@
-/* Global styling */
 * {
     padding: 0;
     margin: 0;
@@ -7,13 +6,15 @@
 }
 
 body {
-    background: rgb(112, 112, 112); /* Light grey background */
+    background-color: rgba(22, 22, 22, 0.7); /* Default background color */
     font-family: Arial, sans-serif;
     overflow-y: auto; /* Enable vertical scrolling */
     scroll-snap-type: y mandatory; /* Enable scroll snapping for vertical sections */
     display: block; /* Change display to block to allow vertical stacking */
 }
-
+ul{
+    list-style: none;
+}
 /* Section styling */
 section {
     height: 100vh; /* Each section takes the full height of the viewport */
@@ -23,7 +24,7 @@ section {
     align-items: center;
     flex-direction: column;
     scroll-snap-align: start; /* Snap sections to start when scrolling */
-    background-color: rgba(0, 0, 0, 0.7); /* Default background color */
+    background-color: rgba(22, 22, 22, 0.7); /* Default background color */
     color: rgb(17, 17, 17); /* Default text color */
 }
 
@@ -67,9 +68,9 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Icon strip styling */
-.icon {
-    position: fixed; /* Keep the icons fixed to the left */
+/* header strip styling */
+.header {
+    position: fixed; /* Keep the header fixed to the left */
     left: 0;
     top: 0;
     width: 100px;
@@ -79,11 +80,11 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     z-index: 1000;
-    justify-content: center; /* Center icons vertically */
+    justify-content: center; /* Center header vertically */
 }
 
-/* Main icons styling */
-.icon ul {
+/* Main header styling */
+.header ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -95,28 +96,30 @@ nav ul li a:hover {
     padding: 0; /* Remove padding */
 }
 
-/* Share icon positioning at the bottom */
-.icon2 {
+/* Share header-icon positioning at the bottom */
+.header-icon {
     margin-bottom: 20px; /* Add space at the bottom for the share icon */
 }
 
-/* Icon styling */
-.icon img {
+/* header styling */
+.header img {
     width: 40px;
     height: 40px;
     background-color: transparent;
     transition: transform 0.2s ease-in-out;
 }
 
-.icon3 img {
+.about-icon img {
     width: 40px;
     height: 40px;
     background-color: transparent;
     transition: transform 0.2s ease-in-out;
     margin-left: 150px;
+    margin-top: 50px;
+    
 }
 
-.icon4 img {
+.about-icon2 img {
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -124,14 +127,16 @@ nav ul li a:hover {
     margin-right: 100px;
 }
 
-.icon img:hover {
+
+
+.header img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
 
 
 
 /* Content area styling */
-.content {
+.home-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,6 +145,8 @@ nav ul li a:hover {
     background: rgb(233, 232, 232); /* Light grey background */
     padding: 20px;
 }
+
+
 
 /* Specific text-box styling */
 .text-box {
@@ -216,8 +223,8 @@ nav ul li a:hover {
     box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 1);
 }
 
-/* Styling for icon2 */
-.icon2 {
+/* Styling for header-icon */
+.header-icon {
     margin-bottom: 10px;
 }
 
@@ -232,59 +239,39 @@ nav {
     text-align: center;
 }
 
+
+
 /* Section-specific styling */
 #about {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100vh;
-    width: 100%;
-}
-
-/* Fixing the z-index for content */
-#about .content {
-    background: rgb(233, 232, 232); /* Light grey background */
-    padding: 20px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7); 
     
-    border-radius: 0px;
-    width: 90%;
     text-align: center;
     z-index: 1; /* Ensures content stays above background elements */
+    width: 100%;
+    height: 100vh;  
 }
 
-/* Positioning icon3 and icon4 */
-.icon3 {
-    position: absolute;
-    top: 50px; /* Position icons at the top */
-    z-index: 2; /* Keep them behind the content */
-    left: 5px;  /* icon3 at the start (left) of the section */
-}
-.icon4 {
-    position: absolute;
-    bottom: 50px; /* Position icons at the bottom */
-    z-index: 2; /* Keep them behind the content */
-    right: 20px;  /* icon3 at the bottom (right) of the section */
-}
 
-/* Icon styling */
-.icon img {
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    transition: transform 0.2s ease-in-out;
-    opacity: 0.7; /* Slight transparency for visibility */
-}
 
-/* Ensure icons scale on hover */
-.icon img:hover {
-    transform: scale(1.1) /* Slightly enlarge the icon on hover */
+.section-content{
+    display: flex;
+    background: rgb(233, 232, 232); /* Light grey background */
+    height: 100vh;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    color: rgb(17, 17, 17); /* Default text color */
+    flex-direction: column;
+    
 }
-
 
 /* Style for the container with two-sided rounded corners */
-.rectangular-frame {
+.about-content {
     width: 100%; /* Adjust width as needed */
     max-width: 900px; /* Maximum width for the frame */
     background-color: white; /* Background color of the frame */
@@ -294,39 +281,295 @@ nav {
     border-bottom-left-radius: 30px; /* Bottom-right rounded corner */
     box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1); /* Shadow for depth */
     text-align: center;
+    height: 60%;
 }
 
 /* Style for the <h1> element inside the frame */
-.rectangular-frame h1 {
+.about-content h1 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px; /* Space between <h1> and <textarea> */
     color: #000; /* Text color */
 }
 
-/* Style for the textarea inside the frame */
-.rectangular-frame textarea {
-    width:80%;
-    height: 200px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc; /* Border around the textarea */
-    resize: none; /* Disable resizing */
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #050505; /* Text color inside the textarea */
+
+
+
+
+/* Positioning icon3 and icon4 */
+.about-icon {
+    position: absolute;
+    top: 10px; /* Position icons at the top */
+    z-index: 2; /* Keep them behind the content */
+    left: 5px;  /* icon3 at the start (left) of the section */
+}
+.about-icon2 {
+    position: absolute;
+    bottom: 50px; /* Position icons at the bottom */
+    z-index: 2; /* Keep them behind the content */
+    right: 20px;  /* icon2 at the bottom (right) of the section */
 }
 
 
-/* Ensuring sections maintain uniform layout */
-section {
+/* Style for the <h1> element inside the frame */
+p {
+    font-size: 16px;
+    font-weight: light;
+    margin-bottom: 20px; /* Space between <h1> and <textarea> */
+    color: #000; /* Text color */
+    border: 1px solid rgba(0, 0, 0, 0.7); /* Border around the frame */
+    
+    text-align: center;
+    align-items: center;
+}
+
+
+/* Project section styling */
+
+/* General styling for content */
+.project-content {
+    
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 0px;
+    width: 90%;
     height: 100vh;
-    padding: 50px 20px;
+    text-align: start; /* Align text to the left */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
-    color: rgb(26, 25, 25);
+    z-index: 1; /* Ensures content stays above background elements */
+    background: rgb(233, 232, 232); /* Light grey background */    
+    
 }
+
+
+/* Style for the project heading */
+#projects h1 {
+    margin-bottom: 20px; /* Adds space between the heading and the images */
+    font-size: 2em;
+    color: black;
+    
+    
+}
+
+.projects{
+flex-direction: column;
+}
+
+/* Style for project gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three images per row */
+    gap: 15px; /* Space between images */
+    justify-items: center; /* Center images horizontally */
+    margin: 0 auto; /* Center the gallery on the page */
+    width: 80%; /* Adjust width as needed */
+}
+
+/* Style for individual images */
+.project-gallery img {
+    width: 100%; /* Make images responsive to the grid */
+    height: 180px;
+    object-fit: cover;
+    max-width: 250px; /* Optional, to control image size */
+    border-radius: 5px;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1); /* Optional shadow effect */
+    transition: all 500ms;
+}
+
+/* Optional hover effect */
+.project-gallery img:hover {
+    transform: scale(1.05);
+    
+}
+
+/* Qualification section styling */
+.qualification-content {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 0px;
+    width: 90%;
+    height: 100vh;
+    text-align: start; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Ensure items align from the start */
+    z-index: 1;
+    background: rgb(233, 232, 232); /* Light grey background */    
+}
+
+/* Styling for Qualifications heading */
+.qualification-content h1 {
+    font-size: 2em;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;  /* Make h1 bold */
+    margin-left: 40%;
+}
+
+/* Align the sections (Education, Skills, Language) */
+.qualification-content {
+    display: flex; /* Ensure sections are in a row on larger screens */
+    justify-content: flex-start; /* Align sections to the start */
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+}
+
+/* Individual section styling (Education, Skills, Language) */
+.qualifications > div {
+    flex: 1;
+    margin: 0 30px; /* Adds space between sections */
+    max-width: 300px;
+}
+
+/* Common styling for each section heading */
+.qualification-content h2 {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: black;
+    border-bottom: 5px solid #050505; /* Adds underline to section headings */
+    padding-bottom: 5px;
+    margin-bottom: 20px; /* Adds space below h2 */
+    text-align: start; /* Align section titles to the left */
+    text-decoration: underline;
+}
+
+
+
+/* Styling for h3 to add a distinct space below h2 */
+.qualification-content h3 {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: black;
+    margin-top: 40px; /* Adds space between h2 and h3 */
+    margin-bottom: 10px;
+}
+
+
+/* Remove numbers from ordered lists */
+.qualification-content ol {
+    list-style-type:  none; /* Removes numbering */
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* List item styling without numbers */
+.qualification-content ol li {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: black;
+    padding-left: 15px;
+    position: relative;
+}
+
+/* Unordered list for Skills */
+.qualification-content ul {
+    list-style: disc;/* Adds bullet points to unordered list */
+    padding-left: 20px;
+    margin-bottom: 10px;
+
+}
+
+
+/* Styling for unordered list items */
+.qualification-content ul li {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    color: black;
+}
+
+
+/* For responsiveness: make sections stack vertically on smaller screens */
+@media (max-width: 768px) {
+    .qualifications {
+        flex-direction: column; /* Stack sections vertically */
+        padding: 10px;
+    }
+
+    .qualifications > div {
+        margin: 10px 0;
+        max-width: 100%; /* Allow sections to take full width */
+    }
+}
+
+/* Contact specific styling */
+#contact .content {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 0px;
+    width: 90%;
+    height: 100vh;
+    text-align: start; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensures content stays above background elements */
+    background: rgb(233, 232, 232); /* Light grey background */  
+}
+
+h1 {
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2.0em;
+    color: black;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+/* Name group styling */
+.name-group {
+    display: flex;
+    justify-content: space-between; /* Space between name fields */
+    gap: 10px; /* Space between name inputs */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.form-group label {
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%; /* Full width of the form group */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Border color */
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 100px; /* Height for the textarea */
+}
+
+/* Button styling */
+button {
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #333; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
 
 
